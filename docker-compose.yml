@@ -1,0 +1,16 @@
+services:
+  helios:
+    build: .
+    container_name: helios-node
+    ports:
+      - "8545:8545"
+    volumes:
+      - helios-data:/data
+    command: >
+      ethereum
+      --execution-rpc ${ETH_RPC_URL}
+      --rpc-bind-ip 0.0.0.0
+    restart: unless-stopped
+
+volumes:
+  helios-data:
