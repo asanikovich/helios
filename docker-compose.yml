@@ -2,6 +2,7 @@ services:
   helios:
     build: .
     container_name: helios-node
+    image: ghcr.io/asanikovich/helios:latest
     ports:
       - "8545:8545"
     volumes:
